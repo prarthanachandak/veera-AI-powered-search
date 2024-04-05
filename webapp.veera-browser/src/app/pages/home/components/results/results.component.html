@@ -1,1 +1,12 @@
-<p>results works!</p>
+<div class="results">
+    <p>{{count}}</p>
+    <div class = "result" *ngFor="let result of results">
+        <a [href]="result?.url" class="title" target="_blank">
+            <h4>{{result?.title}}</h4>
+        </a>
+        <a [href]="result?.url"  class="url" target="_blank">{{result?.url}}</a>
+        <p>{{ result?.description}}</p>
+    </div>
+
+    
+</div>
