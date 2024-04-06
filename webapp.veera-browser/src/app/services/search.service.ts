@@ -10,7 +10,7 @@ export class SearchService {
   private API_KEY = environment.API_KEY;
   private CONTEXT_KEY = environment.CONTEXT_KEY;
   searchResults = new Subject();
-  private url = 'http://127.0.0.1:7000/search/';
+  private url = 'https://5455d5f4-8766-4acd-890f-c5d6f0b1e6ce.mock.pstmn.io/search';
   constructor(
     private http: HttpClient
   ) { }

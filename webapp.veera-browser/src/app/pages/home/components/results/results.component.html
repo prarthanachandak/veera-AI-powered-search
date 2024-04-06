@@ -1,25 +1,20 @@
+<div class="logo" style="background-color: black;">
+  <img src="../../../../../assets/img/veera-logo.png" alt="Veeva logo">
+</div>
 <div fxLayout="row" fxLayoutAlign="space-around stretch" class="card-container" >
-    <mat-card class="example-card" fxFlex="60">
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>This card indeterminates progress bar.</p>
-          <p>{{longText}}</p>
-        </mat-card-content>
-    
-      </mat-card>
-    
-      <mat-card class="example-card" fxFlex="37">
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>This card indeterminates progress bar.</p>
-          <p>{{longText}}</p>
-        </mat-card-content>
-    
-      </mat-card>
-    </div>
+  <mat-card class="example-card expanded" fxFlex="60">
+    <mat-card-header>
+      <mat-card-title>{{results.summary.Headline}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{results.summary.Paragraph}}</p>
+      <div [innerHtml]="results.summary.html"></div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <mat-card class="example-card" fxFlex="37" *ngIf="results.summary.html">
+    <mat-card-content>
+      <div [innerHtml]="results.summary.html"></div>
+    </mat-card-content>
+  </mat-card> -->
+</div>
