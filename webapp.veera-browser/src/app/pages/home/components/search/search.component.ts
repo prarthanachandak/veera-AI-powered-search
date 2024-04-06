@@ -1,33 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SearchService } from '../../../../services/search.service';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {ControlContainer, NgForm} from '@angular/forms';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
+  viewProviders: [{provide: ControlContainer, useExisting: NgForm}]  // To pass data from custom element to parent
 })
-export class SearchComponent implements OnInit  {
-  searchForm!: FormGroup;
-  searchTerm = ""
+export class SearchComponent implements OnInit {
+  @Input() iconRight!: string;
+  @Input() currentTermValue!: string;
+  // @ts-ignore
+  @ViewChild('icon') icon: ElementRef;
 
-  constructor(private formBuilder: FormBuilder, private searchService:SearchService) {}
+  constructor() {
+  }
+
 
   ngOnInit(): void {
-    this.searchForm = this.formBuilder.group({
-      searchTerm: ['']
-    });
+   console.log('here');
   }
 
-  searchWeb(): void {
-    console.log('searchTerm', this.searchForm.value.searchTerm);
-    if(this.searchForm.value.searchTerm==='')return;
-    this.searchService.getResults(this.searchForm.value.searchTerm).subscribe((response:any)=>{
-      this.searchService.passResults({results:response.value, count:response.totalCount})
-    },
-  (error:any)=>{
-    console.log('error occured', error);
-    
-  })
-    
-  }
 }

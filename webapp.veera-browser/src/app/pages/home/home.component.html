@@ -1,3 +1,31 @@
-<app-search></app-search>
+<!-- <div class="container" fxLayout="column">
+    <div fxFlex ="20"> Div1 </div>
+    <div fxFlex> Div2 </div>
+ </div> -->
 
-<app-results></app-results>
+
+ <div class="home-container gradient-bg">
+    <header>
+      <!-- <a href="//gmail.com">Gmail</a>
+      <a href="//google.com/images">Images</a> -->
+      <!-- <mat-icon>apps</mat-icon>
+      <button>Sign in</button> -->
+    </header>
+  
+    <main>
+      <div class="search-box">
+        <form #form="ngForm" (ngSubmit)="search(form)">
+          <app-search iconRight="false"></app-search>
+        </form>
+  
+      </div>
+  
+      <!-- <div class="g-buttons">
+        <button (click)="search()" type="button">Google Search</button>
+        <button>I'm Feeling Lucky</button>
+      </div> -->
+    </main>
+  
+  
+  </div>
+  

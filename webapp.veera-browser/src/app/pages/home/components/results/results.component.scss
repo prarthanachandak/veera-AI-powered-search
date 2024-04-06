@@ -1,0 +1,29 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 50px 0; /* add top and bottom padding */
+    background: linear-gradient(to bottom, #000, #aaaadd);
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      height: auto;
+      padding: 20px 0; /* adjust top and bottom padding for smaller screens */
+    }
+  }
+
+  .example-card {
+    height: 550px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgb(255, 236, 126), rgb(255, 255, 255));
+  }
+
+  @media (max-width: 768px) {
+    .example-card {
+      height: auto;
+      max-width: 100%;
+    }
+  }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../../../services/search.service';
-import { response } from 'express';
-import { error } from 'console';
+import { GoogleResponse } from '../../../../Response.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-results',
@@ -9,22 +9,26 @@ import { error } from 'console';
   styleUrl: './results.component.scss'
 })
 export class ResultsComponent implements OnInit {
-  results: any[]=[];
-  count=0;
+  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
+  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
+  originally bred for hunting.`;
+  results!: GoogleResponse;
+  term: any;
+  subs: Subscription[] = [];
   constructor(
     private searchService: SearchService
   ){}
 
   ngOnInit(): void{
-    this.searchService.getPassedResults().subscribe((response:any)=>{
-      this.results =response.results;
-      this.count = response.count;
-      console.log('results and count', this.results, this.count);
-      
-
-    },
-  (error:any)=>{
-    console.log('error occured', error)
-  })
+    console.log( history.state);
+    const {term} = history.state;
+    this.term = term;
+    if (term) {
+      this.subs.push(this.searchService.getSearchData(term).subscribe((data: GoogleResponse) => {
+        console.log(data);
+        
+        this.results = data;
+      }));
+    }
   }
 }
