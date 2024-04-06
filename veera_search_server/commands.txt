@@ -1,0 +1,10 @@
+
+# python manage.py createsuperuser
+# python manage.py collectstatic
+# python manage.py migrate
+
+
+sample
+pythagarus_theorem
+whatsapp
+whatsapp_here
