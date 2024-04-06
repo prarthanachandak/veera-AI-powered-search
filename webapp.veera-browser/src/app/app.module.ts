@@ -11,7 +11,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchComponent } from './pages/home/components/search/search.component';
 import { ResultsComponent } from './pages/home/components/results/results.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,14 @@ import { ResultsComponent } from './pages/home/components/results/results.compon
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    MatCardModule
+    
   ],
   providers: [
     provideClientHydration(),

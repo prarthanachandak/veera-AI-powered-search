@@ -1,1 +1,41 @@
-<p>search works!</p>
+    <!-- <div class="search-bar">
+        
+            <mat-form-field class="search-field" style="width: 90%">
+                <input matInput type="search" formControlName="searchTerm" placeholder="Search..." >
+
+                <button mat-icon-button (click)="searchWeb()">
+                    <mat-icon matPrefix>search</mat-icon>
+                </button>
+            </mat-form-field>
+    </div> -->
+
+    <!-- <div class="search-bar">
+        <input value="{{ searchTerm }}"
+               name="search_term"
+               
+               type="text">
+        <div #icon [ngClass]="{
+          'right-icon' : iconRight === 'true',
+          'left-icon' : iconRight === 'false'
+        }">
+          <mat-icon class="search_icon">search_outline</mat-icon>
+        </div>
+        <button style="display: none;" type="submit"></button>
+      </div> -->
+      
+
+      <div class="search-bar">
+        <input value="{{ currentTermValue }}"
+               name="search_term"
+               placeholder="Search or type a URL"
+               [(ngModel)]="currentTermValue"
+               type="text">
+        <div #icon [ngClass]="{
+          'right-icon' : iconRight === 'true',
+          'left-icon' : iconRight === 'false'
+        }">
+          <mat-icon class="search_icon">search_outline</mat-icon>
+        </div>
+        <button style="display: none;" type="submit"></button>
+      </div>
+

@@ -1,4 +1,29 @@
-<p>Home Works</p>
+<!-- <div class="container" fxLayout="column">
+    <div fxFlex ="20"> Div1 </div>
+    <div fxFlex> Div2 </div>
+ </div> -->
 
-<app-search></app-search>
-<app-results></app-results>
+
+ <div class="home-container gradient-bg">
+  <header>
+    <img src="../../../assets/img/veera-logo.png" alt="Veeva logo" class="logo">
+  </header>
+
+  
+    <main>
+      <div class="search-box">
+        <form #form="ngForm" (ngSubmit)="search(form)">
+          <app-search iconRight="false"></app-search>
+        </form>
+  
+      </div>
+  
+      <!-- <div class="g-buttons">
+        <button (click)="search()" type="button">Google Search</button>
+        <button>I'm Feeling Lucky</button>
+      </div> -->
+    </main>
+  
+  
+  </div>
+  
